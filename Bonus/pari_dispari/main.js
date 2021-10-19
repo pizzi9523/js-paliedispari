@@ -1,3 +1,4 @@
+const containerElement = document.querySelector(".container");
 //L'utente sceglie pari o dispari
 let user_choice = "";
 while (user_choice != "pari" && user_choice != "dispari") {
@@ -47,9 +48,14 @@ function pariDispari(number) {
 console.log(`User sceglie ${user_choice} e lancia ${user_number}`);
 console.log(`Il pc sceglie ${pc_number}`);
 console.log(`La somma dei due numeri è ${sum}`);
+containerElement.innerHTML = `<h1> User sceglie ${user_choice} e lancia ${user_number} <br> Il pc sceglie ${pc_number} <br> La somma dei due numeri è ${sum} </h1>`
+
 
 if (user_choice == pariDispari(sum)) {
     console.log("User Wins");
+    containerElement.insertAdjacentHTML("beforeend", "<h2>User Wins</h2>");
+
 } else {
     console.log("Pc Wins");
+    containerElement.insertAdjacentHTML("beforeend", "<h2>PC Wins</h2>");
 }
