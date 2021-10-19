@@ -1,3 +1,4 @@
+const containerElement = document.querySelector(".container");
 // Chiedere all'utente di inserire un parola
 const user_word = prompt("Inserisci una parola");
 
@@ -23,7 +24,9 @@ function palindromVerify(word) {
 //richiamo la funzione dentro un if per stampare il risultato della verifica
 if (palindromVerify(user_word)) {
     console.log(`La parola ${user_word} è palindroma`);
+    containerElement.innerHTML = `<h2>La parola ${user_word} è palindroma</h2>`
 }
 else {
+    containerElement.innerHTML = `<h2>La parola ${user_word} non è palindroma</h2>`
     console.log(`La parola ${user_word} non è palindroma`);
 }
